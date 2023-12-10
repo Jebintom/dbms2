@@ -1,0 +1,20 @@
+declare
+a int;
+b int;
+c int;
+n int;
+i int;
+begin
+a:=0;
+b:=1;
+dbms_output.put_line('enter the series number:');
+n:=&n;
+dbms_output.put_line(a);
+dbms_output.put_line(b);
+for i in 1..n loop
+c:=(a+b);
+a:=b;
+b:=c;
+dbms_output.put_line(c);
+end loop;
+end;
