@@ -1,0 +1,16 @@
+set serveroutput on
+show serveroutput ;// first run these two lines then the rest......
+declare
+fact int;
+n int;
+
+begin
+n:=&n;
+
+fact:=1;
+while n > 0 loop
+fact:=n*fact;
+n:=n-1;
+end loop;
+dbms_output.put_line('factorial is' ||fact);
+end;
