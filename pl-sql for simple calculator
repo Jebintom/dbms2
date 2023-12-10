@@ -1,0 +1,23 @@
+declare 
+num1 number;
+num2 number;
+choice number;
+begin
+dbms_output.put_line('1- add 2-sub 3-mul 4-div');
+num1:=&num1;
+num2:=&num2;
+choice:=&choice;
+case 
+when choice='1' then
+dbms_output.put_line('sum is'|| (num1+num2));
+when choice='2' then
+dbms_output.put_line('sub is'|| (num1-num2));
+when choice='3' then
+dbms_output.put_line('mul is'|| (num1*num2));
+when choice='4' then
+dbms_output.put_line('sum is'|| (num1/num2));
+else
+
+dbms_output.put_line('erroe');
+end case;
+end;
