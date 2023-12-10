@@ -1,0 +1,17 @@
+create table bank_details(accno int primary key,name varchar(20),balance varchar(20),adate varchar(20));
+insert into bank_details values( '3232','jebin',44354,'30-12-22');
+insert into bank_details values( '32556','ebin',45454,'22-12-22');
+insert into bank_details values( '3265','bin',3564,'03-12-22');
+
+create table newbank_details(accno int,interest int,foreign key(accno) references  bank_details(accno)) ;
+
+declare cursor c1 is
+select accno,name,balance from bank_details;
+intr int;
+begin
+for i in c1 loop
+intr:=(i.balance*0.08);
+insert into newbank_details values(i.accno,intr);
+end loop;
+end;
+select *from newbank_details;
