@@ -1,0 +1,18 @@
+set serveroutput on
+show serveroutput ;//after running these two line run the rest
+declare
+num1 int;
+num2 int;
+num3 int;
+begin
+num1:=&num1;
+num2:=&num2;
+num3:=&num3;
+if num1>num2 and num1>num3 then
+dbms_output.put_line('num1 is greater'||num1);
+elsif num2>num1 and num2>num3 then
+dbms_output.put_line('num2 is greater'||num2);
+else
+dbms_output.put_line('num3 is greater'||num3);
+end if;
+end;
