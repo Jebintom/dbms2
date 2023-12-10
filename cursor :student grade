@@ -1,0 +1,25 @@
+create table stu_details(id int primary key,name varchar(20),m1 int,m2 int, m3 int,grade varchar(20));
+insert into  stu_details values(5,'jebin',23,34,56,null);
+insert into  stu_details values(6,'kebin',26,44,46,null);
+insert into  stu_details values(7,'ebin',83,54,56,null);
+
+declare cursor c2 is
+select id,m1,m2,m3 from stu_details;
+grad varchar(20);
+total int;
+begin
+for i in c2 loop
+total:=(i.m1+i.m2+i.m3);
+if total>=180 then
+grad:='A';
+elsif total>120 then
+grad:='b';
+elsif total>80 then
+grad:='c';
+else
+grad:='d';
+end if;
+update stu_details set grade=grad where id=i.id;
+end loop;
+end;
+select * from  stu_details;
